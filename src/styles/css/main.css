@@ -1,0 +1,43 @@
+header, .productCard {
+  -moz-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  -webkit-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+}
+
+.productArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productCard {
+  padding: 20px;
+  margin: 20px 10px;
+  background-color: #40454d;
+  text-align: center;
+}
+
+body {
+  background-color: #3a3f45;
+  color: #eaeaea;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+header {
+  background-color: #40454d;
+  text-align: center;
+}
+header h1 {
+  padding: 150px;
+}
+
+.productCard {
+  min-height: 400px;
+  width: 33%;
+}
+
+/*# sourceMappingURL=main.css.map */
