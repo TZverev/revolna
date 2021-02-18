@@ -2,19 +2,19 @@ $bg-color: rgb(58, 63, 69);
 $font-color: rgb(234, 234, 234);
 $primary-color: rgb(64, 69, 77);
 
-%shadow {
+@mixin  shadow {
     -moz-box-shadow: rgb(26 26 26 / 20%) 0px 4px 6px, rgb(26 26 26 / 10%) 0px 5px 15px;
     -webkit-box-shadow: rgb(26 26 26 / 20%) 0px 4px 6px, rgb(26 26 26 / 10%) 0px 5px 15px;
     box-shadow: rgb(26 26 26 / 20%) 0px 4px 6px, rgb(26 26 26 / 10%) 0px 5px 15px;
 }
 
-%flex-container{
+@mixin flex-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-%card {
-    @extend %shadow;
+@mixin card {
+    @include shadow;
     padding: 20px;
     margin: 20px 10px;
     background-color: $primary-color;
@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
 }
 
 header{
-    @extend %shadow;
+    @include shadow;
     background-color: $primary-color;
     text-align: center;
     h1 {
@@ -42,11 +42,11 @@ header{
 }
 
 .productArea{
-    @extend %flex-container;
+    @include flex-container;
 }
 
 .productCard{
-    @extend %card;
+    @include card;
     min-height: 400px;
     width: 33%;
 }

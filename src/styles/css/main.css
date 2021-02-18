@@ -1,21 +1,3 @@
-header, .productCard {
-  -moz-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
-  -webkit-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
-  box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
-}
-
-.productArea {
-  display: flex;
-  justify-content: space-between;
-}
-
-.productCard {
-  padding: 20px;
-  margin: 20px 10px;
-  background-color: #40454d;
-  text-align: center;
-}
-
 body {
   background-color: #3a3f45;
   color: #eaeaea;
@@ -28,6 +10,9 @@ h1, h2, h3, h4 {
 }
 
 header {
+  -moz-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  -webkit-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
   background-color: #40454d;
   text-align: center;
 }
@@ -35,7 +20,19 @@ header h1 {
   padding: 150px;
 }
 
+.productArea {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .productCard {
+  -moz-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  -webkit-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
+  padding: 20px;
+  margin: 20px 10px;
+  background-color: #40454d;
+  text-align: center;
   min-height: 400px;
   width: 33%;
 }

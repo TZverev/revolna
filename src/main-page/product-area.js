@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import ProductCard from './product-card';
 
-function ProductArea() {
+import { getProducts } from '../store/actions';
+
+function ProductArea(props) {
     return (
-        <section className='productArea'>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-        </section>
+        <div>
+            <button onClick={() => {
+                props.onGetProducts(
+                    props.productStore.lastDoc,
+                    props.productStore.isLoading)
+            }}>get</button>
+            <section className='productArea'>
+                {props.productStore.data.map((prod) => {
+                    return (
+                        <ProductCard data={prod} key={prod.id} />
+                    )
+                })}
+            </section>
+        </div >
     );
 };
 
-export default ProductArea;
+export default connect(
+    state => ({
+        productStore: state.producsData
+    }),
+    dispatch => ({
+        onGetProducts: (lastDoc, isLoading) => {
+            dispatch(getProducts(lastDoc, isLoading));
+        }
+    })
+)(ProductArea);
 

@@ -1,11 +1,14 @@
 import React from 'react';
 
-function ProductCard() {
+function ProductCard(props) {
     return (
         <div className='productCard'>
             <h3>
-                Solar Panel X
+                {props.data.name}
             </h3>
+            <p>
+                {props.data.description}
+            </p>
         </div>
     );
 };
