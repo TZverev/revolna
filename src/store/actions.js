@@ -1,5 +1,4 @@
 import { db } from '../firebase/firebase-info';
-import productsData from './products-data';
 
 function ProductData(doc) {
     this.id = doc.id;
@@ -21,7 +20,6 @@ export const getProducts = (lastDoc, isLoading) => dispatch => {
         if (lastDoc !== null) {
             productsRef = productsRef.startAfter(lastDoc);
         }
-
         productsRef.get().then((info) => {
             if (info.size === 0) {
                 return

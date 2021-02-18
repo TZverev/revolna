@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import ProductArea from './main-page/product-area';
+import ProductAreaLoader from './main-page/product-area';
 import './styles/css/main.css';
 import store from './store/store';
 
@@ -13,7 +13,7 @@ function App() {
           Revolna.com
         </h1>
       </header>
-      <ProductArea />
+      <ProductAreaLoader />
     </Provider>
   );
 }

@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import ProductCard from './product-card';
-
 import { getProducts } from '../store/actions';
+import handleScroll from '../features/scroll';
+
 
 function ProductArea(props) {
+    const storage = props.productStore;
+
+    useEffect(() => {
+        props.onGetProducts(storage.lastDoc, storage.isLoading);
+        document.addEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <div>
-            <button onClick={() => {
-                props.onGetProducts(
-                    props.productStore.lastDoc,
-                    props.productStore.isLoading)
-            }}>get</button>
             <section className='productArea'>
-                {props.productStore.data.map((prod) => {
+                {storage.data.map((prod) => {
                     return (
                         <ProductCard data={prod} key={prod.id} />
                     )
