@@ -9,7 +9,7 @@ function ProductData(doc) {
 }
 
 export const getProducts = (lastDoc, isLoading) => dispatch => {
-    let productsRef = db.collection('products').orderBy('isReleased', 'desc').limit(1);
+    let productsRef = db.collection('products').orderBy('isReleased', 'desc').limit(10);
     let productsArray = [];
 
     dispatch({

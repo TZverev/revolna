@@ -9,20 +9,44 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 0.4em;
+  outline: none;
+  line-height: 44px;
+  height: 44px;
+  padding: 0px 18px;
+  background-color: rgba(217, 224, 232, 0.7);
+  border: 1px solid rgba(217, 224, 232, 0.7);
+  color: #3a3f45;
+}
+
+p {
+  color: #9e9e9e;
+}
+
 header {
   -moz-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
   -webkit-box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
   box-shadow: rgba(26, 26, 26, 0.2) 0px 4px 6px, rgba(26, 26, 26, 0.1) 0px 5px 15px;
   background-color: #40454d;
-  text-align: center;
 }
 header h1 {
-  padding: 150px;
+  padding: 50px 0;
+  margin-left: 2%;
+}
+header h1 span {
+  color: #9e9e9e;
 }
 
-.productArea {
+.productsArea {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .productCard {
@@ -33,8 +57,29 @@ header h1 {
   margin: 20px 10px;
   background-color: #40454d;
   text-align: center;
-  min-height: 400px;
-  width: 33%;
+  min-height: 200px;
+  max-width: 30%;
+}
+.productCard img {
+  max-width: 250px;
+}
+.productCard .productIcon {
+  margin: 30px;
+  border-radius: 20px;
+}
+.productCard p {
+  min-height: 150px;
+  overflow: auto;
+}
+.productCard button {
+  margin: 25px;
+  width: 230px;
+  height: 70px;
+  transition: all 0.3s;
+}
+.productCard button:hover {
+  border: 1px solid rgba(217, 224, 232, 0.5);
+  background-color: rgba(217, 224, 232, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */

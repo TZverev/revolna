@@ -1,6 +1,8 @@
 $bg-color: rgb(58, 63, 69);
 $font-color: rgb(234, 234, 234);
 $primary-color: rgb(64, 69, 77);
+$second-color: rgb(158, 158, 158);
+$button-width: 250px;
 
 @mixin  shadow {
     -moz-box-shadow: rgb(26 26 26 / 20%) 0px 4px 6px, rgb(26 26 26 / 10%) 0px 5px 15px;
@@ -8,9 +10,14 @@ $primary-color: rgb(64, 69, 77);
     box-shadow: rgb(26 26 26 / 20%) 0px 4px 6px, rgb(26 26 26 / 10%) 0px 5px 15px;
 }
 
-@mixin flex-container{
+@mixin flex-right{
     display: flex;
     justify-content: flex-start;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: flex-end;
 }
 
 @mixin card {
@@ -32,21 +39,67 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+button{
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 0.4em;
+    outline: none;
+    line-height: 44px;
+    height: 44px;
+    padding: 0px 18px;
+    background-color: rgba(217, 224, 232, 0.7);
+    border: 1px solid rgba(217, 224, 232, 0.7);
+    color: rgb(58, 63, 69);
+}
+
+p {
+    color: $second-color;
+}
+
 header{
     @include shadow;
     background-color: $primary-color;
-    text-align: center;
     h1 {
-        padding: 150px;
+        padding: 50px 0;
+        margin-left: 2%;
+        span{
+            color:$second-color;
+        }
     }
 }
 
-.productArea{
-    @include flex-container;
+.productsArea{
+    @include flex-right;
+    flex-wrap: wrap;
 }
 
 .productCard{
     @include card;
-    min-height: 400px;
-    width: 33%;
+    min-height: 200px;
+    max-width: 30%;
+    img{
+        max-width: $button-width;
+    }
+    .productIcon{
+        margin: 30px;
+        border-radius: 20px;
+    }
+    p {
+       min-height: 150px;
+       overflow: auto;
+    }
+
+    button{
+        margin: 25px;
+        width: $button-width - 20px;
+        height: 70px;
+        transition: all 0.3s;
+        &:hover{
+            border: 1px solid rgba(217, 224, 232, 0.5);
+            background-color: rgba(217, 224, 232, 0.5);
+        }
+    }
 }

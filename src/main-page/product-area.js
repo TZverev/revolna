@@ -11,18 +11,19 @@ function ProductArea(props) {
     useEffect(() => {
         props.onGetProducts(storage.lastDoc, storage.isLoading);
         document.addEventListener('scroll', handleScroll);
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
-        <div>
-            <section className='productArea'>
-                {storage.data.map((prod) => {
-                    return (
-                        <ProductCard data={prod} key={prod.id} />
-                    )
-                })}
-            </section>
-        </div >
+        <div className='productsArea'>
+            {storage.data.map((prod) => {
+                return (
+                    <ProductCard data={prod} key={prod.id} />
+                )
+            })}
+        </div>
     );
 };
 
