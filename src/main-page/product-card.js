@@ -1,28 +1,77 @@
-import React from 'react';
-import logo from '../img/JczxH9FkieE.jpg';
+import React, { useState } from 'react';
+import PreOrder from '../features/pre-order';
+import googlePlayImg from '../img/google_get_on.png';
+import huaweiImg from '../img/huawei_get_on.png';
 
-function ProductCard(props) {
-    return (
-        <div className='productCard'>
-            <h2>
-                {props.data.name}
-            </h2>
-            <img className='productIcon' src={logo} />
-            <p>
-                {props.data.description}
-            </p>
+function ProductCardButtons(props) {
+    const data = props.data;
+    const style = `card${data.id}-btn`;
+    const [isPreOrderInput, setIsPreOrderInput] = useState(false);
 
+    function openPopUp() {
+        setIsPreOrderInput(true);
+    }
 
-            {!props.data.isReleased ?
-                <button>
+    function closePopUp() {
+        setIsPreOrderInput(false);
+    }
+
+    if (data.isReleased) {
+        return (
+            <div>
+                {data.googleLink &&
+                    <a href={data.googleLink}>
+                        <img alt='Get it on GooglePlay'
+                            src={googlePlayImg}
+                            className={style} />
+                    </a>}
+                {data.huaweiLink &&
+                    <a href={data.huaweiLink}>
+                        <img alt='Explore it on AppGallary'
+                            src={huaweiImg}
+                            className={style} />
+                    </a>}
+            </div>
+        );
+    } else {
+        return (
+            <>
+                <button className={style}
+                    onClick={openPopUp}>
                     Make pre-order
                 </button>
-                :
-                <a href='https://play.google.com/store/apps/details?id=com.revolve44.solarpanelx&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-                    <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' />
-                </a>
-            }
+                {
+                    isPreOrderInput &&
+                    <PreOrder closePopUp={closePopUp} prodId={data.id} />
+                }
+            </>
+        )
+    }
+};
 
+function ProductCard(props) {
+    const data = props.data;
+    return (
+        <div className={`prodCard card${data.id}`}>
+            <header>
+                <div className='h2-wrapper'>
+                    <h2>
+                        {data.name}
+                    </h2>
+                </div>
+                <hr />
+            </header>
+            <div className='img-wrapper'>
+                <img src={data.img}
+                    alt={data.name}
+                    className='prodIcon' />
+            </div>
+            <div>
+                <p>
+                    {data.description}
+                </p>
+                <ProductCardButtons data={data} />
+            </div>
         </div>
     );
 };

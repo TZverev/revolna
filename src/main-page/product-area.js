@@ -1,24 +1,13 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import ProductCard from './product-card';
-import { getProducts } from '../store/actions';
-import handleScroll from '../features/scroll';
 
 
 function ProductArea(props) {
-    const storage = props.productStore;
-
-    useEffect(() => {
-        props.onGetProducts(storage.lastDoc, storage.isLoading);
-        document.addEventListener('scroll', handleScroll);
-        return () => {
-            document.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    const storage = props.productsData;
 
     return (
-        <div className='productsArea'>
-            {storage.data.map((prod) => {
+        <div className='prodArea'>
+            {storage.map((prod) => {
                 return (
                     <ProductCard data={prod} key={prod.id} />
                 )
@@ -27,14 +16,5 @@ function ProductArea(props) {
     );
 };
 
-export default connect(
-    state => ({
-        productStore: state.producsData
-    }),
-    dispatch => ({
-        onGetProducts: (lastDoc, isLoading) => {
-            dispatch(getProducts(lastDoc, isLoading));
-        }
-    })
-)(ProductArea);
+export default ProductArea;
 

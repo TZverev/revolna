@@ -1,19 +1,21 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import ProductAreaLoader from './main-page/product-area';
+import ProductArea from './main-page/product-area';
 import './styles/css/main.css';
-import store from './store/store';
+import productsData from './store/content';
 
 function App() {
   return (
-    <Provider store={store}>
-      <header>
+    <>
+      <header className='globalHeader'>
         <h1>
-          Revolna.com <span>{'Apps &  Hardware for Green Energy'}</span>
+          Revolna.com <span><br />{'Apps &  Hardware for Green Energy'}</span>
         </h1>
       </header>
-      <ProductAreaLoader />
-    </Provider>
+      <ProductArea productsData={productsData} />
+      <footer className='globalFooter'>
+        E-mail: info@revolna.com
+      </footer>
+    </>
   );
 }
 
