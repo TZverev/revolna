@@ -68,6 +68,12 @@ input{
     justify-content: space-between;
 }
 
+.fa{
+    span{
+        margin-left: 10px;
+    }
+}
+
 .popUp{
     &-window{
         position: fixed;

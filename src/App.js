@@ -16,11 +16,15 @@ function App() {
       <footer className='globalFooter'>
         <span>E-mail: info@revolna.com</span>
         <div className='socialNetworks-wrapper'>
-          <a href='https://twitter.com/revolnaenergy'>
-            @revolnaenergy
+          <a className='fa fa-twitter' href='https://twitter.com/revolnaenergy'>
+            <span>
+              @revolnaenergy
+            </span>
           </a>
-          <a href='https://www.instagram.com/revolna_workshop/'>
-            @revolna_workshop
+          <a className='fa fa-instagram' href='https://www.instagram.com/revolna_workshop/'>
+            <span>
+              @revolna_workshop
+            </span>
           </a>
         </div>
       </footer>
