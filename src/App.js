@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductArea from './main-page/product-area';
 import './styles/css/main.css';
+import './styles/css/mobile.css';
 import productsData from './store/content';
 
 function App() {
@@ -13,7 +14,15 @@ function App() {
       </header>
       <ProductArea productsData={productsData} />
       <footer className='globalFooter'>
-        E-mail: info@revolna.com
+        <span>E-mail: info@revolna.com</span>
+        <div className='socialNetworks-wrapper'>
+          <a href='https://twitter.com/revolnaenergy'>
+            @revolnaenergy
+          </a>
+          <a href='https://www.instagram.com/revolna_workshop/'>
+            @revolna_workshop
+          </a>
+        </div>
       </footer>
     </>
   );

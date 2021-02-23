@@ -1,0 +1,55 @@
+@media screen and (max-width: 425px) {
+  .globalHeader {
+    padding: 30px;
+  }
+  .globalHeader h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .globalHeader h1 span {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .globalHeader {
+    padding: 30px;
+  }
+  .globalHeader h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .globalHeader h1 span {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .prodArea {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .globalFooter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .globalFooter span {
+    margin: 10px;
+  }
+  .globalFooter .socialNetworks-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .globalFooter .socialNetworks-wrapper a {
+    margin: 10px;
+  }
+
+  .popUp-box {
+    text-align: center;
+    width: auto;
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */

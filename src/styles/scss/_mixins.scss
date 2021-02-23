@@ -1,0 +1,34 @@
+
+@import 'colors';
+
+@mixin btn-size($width) {
+    width: $width;
+    height: (168/564)*$width;
+}
+
+@mixin flex-colum-sb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin btn($focus-color) {
+    &:focus, &:hover, &:active {
+        background-color: $focus-color;
+    }
+}
+
+@mixin prodCard($bg-color) {
+    background-color: $bg-color ;
+    &-btn{
+        @include btn-size($btn-width);
+        margin: 5px;
+    }
+}
+
+@mixin selectNone {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}

@@ -39,7 +39,7 @@ function PreOrder(props) {
                 prodId: props.prodId,
             }).then(
                 setIsLoading(false),
-                props.closePopUp()
+                onClosePopUp(e)
             )
         };
     };
@@ -73,12 +73,12 @@ function PreOrder(props) {
                                 Subscribe for updates:
                         </label>
                             <input className='popUp-input'
-                                type='text'
+                                type='email'
                                 id="updates"
                                 placeholder='Enter email here'
                                 value={email}
                                 onChange={(e) => { handleChangeEmail(e) }}
-                                onFocus={() => { setError('') }} />
+                                required />
                             <span className='popUp-error'>
                                 {error}
                             </span>

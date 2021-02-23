@@ -1,38 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-$first-card-color: #66B98F;
-$second-card-color:#0F8C7C;
-$third-card-color:#02303D;
-$text-color: #EFF0E3;
-$error-color:#C7D3ED;
-$header-color: #493F4F;
+@import 'colors';
+@import 'mixins';
 $btn-width:150px;
 
-@mixin btn-size($width) {
-    width: $width;
-    height: (168/564)*$width;
-}
-
-@mixin flex-colum-sb {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@mixin prodCard($bg-color) {
-    background:linear-gradient(rgba(red($bg-color), green($bg-color), blue($bg-color), 0.9),$bg-color) ;
-    &-btn{
-        @include btn-size($btn-width);
-        margin: 10px;
-    }
-}
-
-@mixin selectNone {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
 
 *{
     color: $text-color;
@@ -55,6 +25,15 @@ h2{
     line-height: 40px;
 }
 
+a{
+    &:link, 
+    &:visited,
+    &:active,
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 button{
     background-color: inherit;
     border-radius: 10px;
@@ -62,16 +41,31 @@ button{
     cursor: pointer;
     &:focus, &:hover, &:active{
             outline: none;
-            background: linear-gradient($header-color, rgb(red($header-color), green($header-color), blue($header-color), 0.8));
+            background-color: $header-color;
     }
     &:disabled{
         background-color: red;
     }
 }
 
+input{
+    &:focus{
+        outline: none;
+        border: 2px black solid;
+    }
+}
+
+.socialNetworks-wrapper{
+    a{
+        margin: 0 10px;
+    }
+}
+
 .globalFooter{
     height: 50px;
     padding: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .popUp{
@@ -111,6 +105,7 @@ button{
     }
     &-button{
         @include btn-size($btn-width);
+        @include btn($third-card-color);
         margin-top: 15px;
     }
     &-title{
@@ -133,10 +128,8 @@ button{
 }
 
 .globalHeader{
-    background:linear-gradient($header-color, rgb(red($header-color), green($header-color), blue($header-color), 0.8)) ;
-    h1{
-        padding: 100px;
-    }
+    background:linear-gradient(rgba(255, 255, 255, 0.3), $header-color) ;
+    padding: 100px;
 }
 .prodArea{
     display: flex;
