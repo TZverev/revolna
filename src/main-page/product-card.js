@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PreOrder from '../features/pre-order';
+import PreOrderModal from '../features/pre-order-modal'
 import googlePlayImg from '../img/google_get_on.png';
 import huaweiImg from '../img/huawei_get_on.png';
 
@@ -8,11 +8,11 @@ function ProductCardButtons(props) {
     const style = `card${data.id}-btn`;
     const [isPreOrderInput, setIsPreOrderInput] = useState(false);
 
-    function openPopUp() {
+    function openModal() {
         setIsPreOrderInput(true);
     }
 
-    function closePopUp() {
+    function closeModal() {
         setIsPreOrderInput(false);
     }
 
@@ -37,12 +37,12 @@ function ProductCardButtons(props) {
         return (
             <>
                 <button className={style}
-                    onClick={openPopUp}>
+                    onClick={openModal}>
                     Make pre-order
                 </button>
                 {
                     isPreOrderInput &&
-                    <PreOrder closePopUp={closePopUp} prodId={data.id} />
+                    <PreOrderModal closeModal={closeModal} prodId={data.id} />
                 }
             </>
         )

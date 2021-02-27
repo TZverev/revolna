@@ -1,5 +1,5 @@
 @import 'colors';
-@import 'mixins';
+@import 'my_mixins';
 
 @media screen {
     @media (max-width:425px){
@@ -48,7 +48,7 @@
                 }
             }
         }
-        .popUp{
+        .modal{
             &-box{
                 text-align: center;
                 width: auto;

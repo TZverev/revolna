@@ -14,15 +14,21 @@ function App() {
       </header>
       <ProductArea productsData={productsData} />
       <footer className='globalFooter'>
-        <span>E-mail: info@revolna.com</span>
-        <p>*in Pro version</p>
-        <div className='socialNetworks-wrapper'>
-          <a className='fa fa-twitter' href='https://twitter.com/revolnaenergy'>
+        <div className='footeElements-wrapper'>
+          <span>E-mail: info@revolna.com</span>
+          <p>*in Pro version</p>
+        </div>
+        <div className='footeElements-wrapper'>
+          <a className='fa fa-twitter'
+            href='https://twitter.com/revolnaenergy'
+            role='link'>
             <span>
               @revolnaenergy
             </span>
           </a>
-          <a className='fa fa-instagram' href='https://www.instagram.com/revolna_workshop/'>
+          <a className="fa fa-instagram"
+            href='https://www.instagram.com/revolna_workshop/'
+            role='link'>
             <span>
               @revolna_workshop
             </span>
