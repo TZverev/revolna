@@ -8,12 +8,7 @@ const productsData = [
         id: 1,
         isReleased: true,
         name: 'Solar Panel X',
-        description: `Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-        Mauris at tellus vel elit luctus ultricies in ut lectus.
-        In vel odio nec urna volutpat pulvinar sit amet ac nunc.
-        Aliquam erat volutpat. Aenean sagittis tortor a sagittis cursus.
-        Integer elementum, lectus eu aliquet posuere, nisl risus dapibus sem, sed rutrum purus ipsum\n sed elit.`,
+        description: `App for solar panels: forecasting power output at 5 days* ahead, multitool for installing`,
         googleLink: 'https://play.google.com/store/apps/details?id=com.revolve44.solarpanelx',
         huaweiLink: 'https://appgallery.huawei.com/#/app/C103806869',
         img: solarImg,
@@ -22,12 +17,7 @@ const productsData = [
         id: 2,
         isReleased: true,
         name: 'My Wind Turbine',
-        description: `Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-        Mauris at tellus vel elit luctus ultricies in ut lectus.
-        In vel odio nec urna volutpat pulvinar sit amet ac nunc.
-        Aliquam erat volutpat. Aenean sagittis tortor a sagittis cursus.
-        Integer elementum, lectus eu aliquet posuere, nisl risus dapibus sem, sed rutrum purus ipsum\n sed elit.`,
+        description: `App for wind turbines: forecasting power output at 5 days* ahead`,
         googleLink: 'https://play.google.com/store/apps/details?id=com.revolve44.mywindturbine',
         huaweiLink: '',
         img: turbineImg,
@@ -35,13 +25,8 @@ const productsData = [
     {
         id: 3,
         isReleased: false,
-        name: 'Wireless DC Converter for Solar Panels',
-        description: `Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-        Mauris at tellus vel elit luctus ultricies in ut lectus.
-        In vel odio nec urna volutpat pulvinar sit amet ac nunc.
-        Aliquam erat volutpat. Aenean sagittis tortor a sagittis cursus.
-        Integer elementum, lectus eu aliquet posuere, nisl risus dapibus sem, sed rutrum purus ipsum\n sed elit.`,
+        name: 'Wireless DC Controller for Solar Panels',
+        description: `Remote+Wireless controller of energy output your PV station`,
         googleLink: '',
         huaweiLink: '',
         img: converterImg,

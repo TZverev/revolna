@@ -15,6 +15,7 @@ function App() {
       <ProductArea productsData={productsData} />
       <footer className='globalFooter'>
         <span>E-mail: info@revolna.com</span>
+        <p>*in Pro version</p>
         <div className='socialNetworks-wrapper'>
           <a className='fa fa-twitter' href='https://twitter.com/revolnaenergy'>
             <span>
